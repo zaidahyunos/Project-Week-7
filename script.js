@@ -1,6 +1,13 @@
 function updateWeatherInfo(response) {
   let temperatureElement = document.querySelector("#temperature-value");
-  temperatureElement.innerHTML = response.data.temperature.current;
+  let temperatureUpdate = response.data.temperature.current;
+  let cityElement = document.querySelector("#city");
+
+  cityElement.innerHTML = response.data.city;
+  temperatureElement.innerHTML = Math.round(temperatureUpdate);
+
+  //let iconElement = document.querySelector("#temperature-icon");
+  //iconElement.innerHTML = response.data.condition.icon_url;
 }
 
 function searchCity(city) {
@@ -14,9 +21,11 @@ function handleSearchSubmit(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-input");
   let cityElement = document.querySelector("#city");
-  cityElement.innerHTML = searchInput.value;
+
   searchCity(searchInput.value);
 }
 
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
+
+searchCity("Kuala Lumpur");
