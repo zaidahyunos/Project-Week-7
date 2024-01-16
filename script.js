@@ -2,9 +2,15 @@ function updateWeatherInfo(response) {
   let temperatureElement = document.querySelector("#temperature-value");
   let temperatureUpdate = response.data.temperature.current;
   let cityElement = document.querySelector("#city");
+  let descriptionElement = document.querySelector("#weather-description");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
 
   cityElement.innerHTML = response.data.city;
   temperatureElement.innerHTML = Math.round(temperatureUpdate);
+  descriptionElement.innerHTML = response.data.condition.description;
+  humidityElement.innerHTML = response.data.temperature.humidity;
+  windElement.innerHTML = response.data.wind.speed;
 
   //let iconElement = document.querySelector("#temperature-icon");
   //iconElement.innerHTML = response.data.condition.icon_url;
