@@ -6,18 +6,49 @@ function updateWeatherInfo(response) {
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let timeElement = document.querySelector("#day");
-  let date = new Date();
+
+  let now = new Date();
+
+  let date = now.getDate();
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
+  let year = now.getFullYear();
+
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  let day = days[now.getDay()];
+
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  let month = months[now.getMonth()];
 
   cityElement.innerHTML = response.data.city;
   temperatureElement.innerHTML = Math.round(temperatureUpdate);
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   windElement.innerHTML = `${response.data.wind.speed}km/h`;
-  timeElement.innerHTML = formatDate(date);
-}
-
-function formatDate(date) {
-  return `${date}`;
+  timeElement.innerHTML = `${day}, ${date} ${month} ${year}, ${hours}:${minutes}`;
 }
 
 function searchCity(city) {
