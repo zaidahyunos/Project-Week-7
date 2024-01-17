@@ -1,5 +1,5 @@
 body {
-  background-color: #f0f0f0;
+  background-color: white;
 }
 
 header {
@@ -17,7 +17,7 @@ a {
 }
 
 .container {
-  background: white;
+  background: #f0f0f0;
   max-width: 800px;
   margin: 30px auto;
   padding: 30px;
@@ -62,9 +62,7 @@ a {
 .temperature-icon {
   width: 88px;
   height: 88px;
-  margin-top: 10px;
-  background-color: rgba(0, 77, 116, 0.1);
-  border-radius: 50px;
+  margin-top: 2px;
 }
 
 .temperature-unit {
