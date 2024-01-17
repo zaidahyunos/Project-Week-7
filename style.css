@@ -26,7 +26,7 @@ a {
 }
 
 .search-input {
-  background-color: #e9eceb;
+  background-color: rgba(0, 77, 116, 0.1);
   border: none;
   border-radius: 10px;
   width: 85%;
@@ -60,9 +60,11 @@ a {
 }
 
 .temperature-icon {
-  font-size: 50px;
-  margin-top: 20px;
-  margin-right: 10px;
+  width: 88px;
+  height: 88px;
+  margin-top: 10px;
+  background-color: rgba(0, 77, 116, 0.1);
+  border-radius: 50px;
 }
 
 .temperature-unit {
@@ -83,6 +85,10 @@ a {
 
 strong {
   color: #f65282;
+}
+
+.weather-description {
+  text-transform: capitalize;
 }
 
 footer {
