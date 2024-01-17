@@ -14,9 +14,6 @@ function updateWeatherInfo(response) {
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   windElement.innerHTML = `${response.data.wind.speed}km/h`;
   timeElement.innerHTML = formatDate(date);
-
-  //let iconElement = document.querySelector("#temperature-icon");
-  //iconElement.innerHTML = response.data.condition.icon_url;
 }
 
 function formatDate(date) {
