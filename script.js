@@ -14,6 +14,8 @@ function updateWeatherInfo(response) {
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   windElement.innerHTML = `${response.data.wind.speed}km/h`;
   timeElement.innerHTML = formatDate(date);
+
+  console.log(response.data.time.toString());
 }
 
 function formatDate(date) {
@@ -21,7 +23,6 @@ function formatDate(date) {
 }
 
 function searchCity(city) {
-  //make api call and update the interface
   let apiKey = "a8c4f4faa8db0498d2codf9b3t8812a2";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(updateWeatherInfo);
